@@ -123,9 +123,7 @@ export class MMPMExternalPackagesComponent implements OnInit {
             this.dataStore.retrieveMagicMirrorPackageData(true);
             this.snackbar.success("Process complete!");
           })
-          .catch((error) => {
-            console.log(error);
-          });
+          .catch((error) => console.log(error));
       }
     });
   }

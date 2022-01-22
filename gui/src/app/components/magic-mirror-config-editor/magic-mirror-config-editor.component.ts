@@ -20,6 +20,9 @@ enum ConfigFile {
   MMPM_ENV_VARS_JSON,
 }
 
+declare let monaco: any;
+
+
 @Component({
   selector: "app-magic-mirror-config-editor",
   templateUrl: "./magic-mirror-config-editor.component.html",

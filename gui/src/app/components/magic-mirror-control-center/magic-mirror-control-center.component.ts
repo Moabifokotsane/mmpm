@@ -39,7 +39,7 @@ export class MagicMirrorControlCenterComponent implements OnInit {
   private snackbar: CustomSnackbarComponent = new CustomSnackbarComponent(this._snackbar);
 
   public ngOnInit(): void {
-    this.api.retrieve(URLS.GET.MMPM.VERSION).then((response: object) => (this.version = response["version"]));
+    this.api.retrieve(URLS.GET.MMPM.VERSION).then((response: object) => (this.version = response["version"])).catch((error) => console.log(error));
     this.loadControlCenterData();
   }
 
@@ -243,7 +243,7 @@ export class MagicMirrorControlCenterComponent implements OnInit {
               } else {
                 this.snackbar.success("Screen rotation value updated. Please restart your RaspberryPi.");
               }
-            });
+            }).catch(error => console.log(error));
           });
         });
 
